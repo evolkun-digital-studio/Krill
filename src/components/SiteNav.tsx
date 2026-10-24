@@ -2,17 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Menu, ShoppingBag, X } from "lucide-react";
+import { Menu, ShoppingBag, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 import { useCart } from "@/lib/cart";
-import { FISHERY_URL } from "@/lib/site";
 
 const links = [
   { label: "Home", to: "/" },
   { label: "Organics", to: "/organics" },
   { label: "Handicraft", to: "/handicraft" },
   { label: "Dairy", to: "/dairy" },
+  { label: "Fishery", to: "/fishery" },
 ] as const;
 const after = [
   { label: "About", to: "/about" },
@@ -59,9 +59,6 @@ export function SiteNav() {
               {l.label}
             </Link>
           ))}
-          <a href={FISHERY_URL} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1 ${linkCls}`}>
-            Fishery <ArrowUpRight className="size-3.5" aria-hidden />
-          </a>
           {after.map((l) => (
             <Link key={l.to} href={l.to} className={linkCls + active(l.to, false)}>
               {l.label}
@@ -99,9 +96,6 @@ export function SiteNav() {
               {l.label}
             </Link>
           ))}
-          <a href={FISHERY_URL} target="_blank" rel="noopener noreferrer" className="type-body flex items-center gap-1 py-3 text-foreground">
-            Fishery <ArrowUpRight className="size-4" aria-hidden />
-          </a>
           {after.map((l) => (
             <Link key={l.to} href={l.to} className="type-body block py-3 text-foreground">
               {l.label}

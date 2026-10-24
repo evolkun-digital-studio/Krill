@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import portrait from "@/assets/portrait-community.jpg";
 import hands from "@/assets/intro-hands.jpg";
 import { Reveal } from "@/components/Reveal";
 import { pageMeta } from "@/lib/metadata";
-import { FISHERY_URL, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
 
 export const metadata = pageMeta(
   "About KRIL · Kinikh Rural Indigenous Livelihood",
@@ -23,7 +23,7 @@ const producers = [
   { who: "Beekeepers and oil pressers", where: "Kinikh Organics", to: "/organics" },
   { who: "Weavers and woodcarvers", where: "Kinikh Handicraft", to: "/handicraft" },
   { who: "Dairy farmers", where: "Kinikh Dairy", to: "/dairy" },
-  { who: "Fish farmers", where: "Kinikh Fishery", to: FISHERY_URL, external: true },
+  { who: "Fish farmers", where: "Kinikh Fishery", to: "/fishery" },
 ] as const;
 
 const rowCls =
@@ -83,21 +83,12 @@ export default function About() {
           <ul className="mt-10 border-t border-border md:mt-14">
             {producers.map((p) => (
               <li key={p.who}>
-                {"external" in p ? (
-                  <a href={p.to} target="_blank" rel="noopener noreferrer" className={rowCls}>
-                    <span className="text-xl font-semibold tracking-tight md:text-3xl">{p.who}</span>
-                    <span className="type-label inline-flex shrink-0 items-center gap-1 text-muted-foreground">
-                      {p.where} <ArrowUpRight className="size-4" aria-hidden />
-                    </span>
-                  </a>
-                ) : (
-                  <Link href={p.to} className={rowCls}>
-                    <span className="text-xl font-semibold tracking-tight md:text-3xl">{p.who}</span>
-                    <span className="type-label inline-flex shrink-0 items-center gap-1 text-muted-foreground">
-                      {p.where} <ChevronRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
-                    </span>
-                  </Link>
-                )}
+                <Link href={p.to} className={rowCls}>
+                  <span className="text-xl font-semibold tracking-tight md:text-3xl">{p.who}</span>
+                  <span className="type-label inline-flex shrink-0 items-center gap-1 text-muted-foreground">
+                    {p.where} <ChevronRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
+                  </span>
+                </Link>
               </li>
             ))}
           </ul>

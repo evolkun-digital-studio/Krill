@@ -3,16 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { productsByService } from "@/lib/products";
-import { FISHERY_URL, heroSlides, type ServiceKey } from "@/lib/site";
+import { heroSlides, type ServiceKey } from "@/lib/site";
 
 const services = [
   { key: "organics", name: "Organics", line: "Honey, cold-pressed oils and jaggery", note: "From hill apiaries and wooden presses", alt: "Beekeeper tending a honey frame on a flowering hillside", to: "/organics" },
   { key: "handicraft", name: "Handicraft", line: "Baskets, shawls, stoles and woodwork", note: "Woven in Uttarakhand and the Northeast", alt: "Close-up of artisan hands weaving a ringal bamboo basket", to: "/handicraft" },
   { key: "dairy", name: "Dairy", line: "Bilona ghee, paneer, curd and butter", note: "Village cows, bilona ghee", alt: "Village cows grazing across a green hillside pasture", to: "/dairy" },
-  { key: "fishery", name: "Fishery", line: "Live freshwater fish from rural ponds", note: "Clean ponds, live fish", alt: "Wide landscape of freshwater fish ponds at sunrise", to: FISHERY_URL },
+  { key: "fishery", name: "Fishery", line: "Live freshwater fish from rural ponds", note: "Clean ponds, live fish", alt: "Wide landscape of freshwater fish ponds at sunrise", to: "/fishery" },
 ] as const;
 
 export function ShopByService() {
@@ -70,7 +70,7 @@ export function ShopByService() {
                   {photos.length > 0 ? <div className="service-product-photos">
                     {photos.map((product) => <Image key={product.slug} src={product.image} alt={product.name} width={64} height={64} />)}
                   </div> : <p className="type-label service-fish-label">Live fish, never frozen</p>}
-                  <span className="type-label service-shop-link">{service.key === "fishery" ? "Visit Kinikh Fishery" : `Shop ${service.name}`}{service.key === "fishery" ? <ArrowUpRight aria-hidden="true" /> : <ArrowRight aria-hidden="true" />}</span>
+                  <span className="type-label service-shop-link">{service.key === "fishery" ? "Explore Fishery" : `Shop ${service.name}`}<ArrowRight aria-hidden="true" /></span>
                 </div>
               </div>
             </>;
@@ -87,7 +87,7 @@ export function ShopByService() {
               ref: (node: HTMLAnchorElement | null) => { panels.current[index] = node; },
             };
             return <Button key={service.key} asChild variant="ghost" className="service-panel-button">
-              {service.key === "fishery" ? <a {...shared} href={FISHERY_URL} target="_blank" rel="noopener noreferrer">{content}</a> : <Link {...shared} href={service.to}>{content}</Link>}
+              <Link {...shared} href={service.to}>{content}</Link>
             </Button>;
           })}
         </div>

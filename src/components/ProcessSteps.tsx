@@ -6,7 +6,7 @@ export type Step = { title: string; text: string; image: StaticImageData; alt: s
 
 /**
  * One component, five treatments, so each craft section reads as its own world:
- * rail (dark carousel), stack (sticky cards), bento (mosaic), journey (arches), timeline (default).
+ * rail (carousel), stack (sticky cards), bento (mosaic), journey (arches), timeline (default).
  */
 export type StepsVariant = "timeline" | "rail" | "stack" | "bento" | "journey";
 
@@ -110,17 +110,17 @@ const bentoSpans = [
 
 function Bento({ heading, intro, steps }: Props) {
   return (
-    <section className="bg-craft py-20 text-on-dark md:py-28">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+    <section>
+      <div className="mx-auto max-w-7xl px-5 py-[clamp(5rem,11vw,9rem)] md:px-8">
         <Reveal className="mx-auto max-w-3xl text-center">
           <h2 className="type-display">{heading}</h2>
-          <p className="type-body mx-auto mt-6 max-w-xl text-on-dark/70">{intro}</p>
+          <p className="type-body mx-auto mt-5 max-w-xl text-muted-foreground">{intro}</p>
         </Reveal>
-        <ul className="mt-12 grid gap-3 md:mt-16 md:auto-rows-[16rem] md:grid-cols-6 md:gap-4 lg:grid-cols-12">
+        <ul className="mt-14 grid gap-4 md:mt-20 md:auto-rows-68 md:grid-cols-6 md:gap-5 lg:grid-cols-12 lg:gap-6">
           {steps.map((s, i) => (
             <li
               key={s.title}
-              className={`group relative min-h-72 overflow-hidden rounded-[1.75rem] bg-overlay ${bentoSpans[i] ?? "md:col-span-3 lg:col-span-4"}`}
+              className={`group relative min-h-72 overflow-hidden rounded-[2rem] bg-overlay text-on-dark ${bentoSpans[i] ?? "md:col-span-3 lg:col-span-4"}`}
             >
               <Image
                 src={s.image}
@@ -130,9 +130,9 @@ function Bento({ heading, intro, steps }: Props) {
                 className="img-zoom object-cover"
               />
               <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-overlay/85 via-overlay/10 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+              <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                 <h3 className="text-xl font-semibold leading-tight tracking-tight md:text-2xl">{s.title}</h3>
-                <p className="mt-1.5 max-w-sm text-sm leading-relaxed text-on-dark/85">{s.text}</p>
+                <p className="mt-2 max-w-sm text-sm leading-relaxed text-on-dark/85">{s.text}</p>
               </div>
             </li>
           ))}

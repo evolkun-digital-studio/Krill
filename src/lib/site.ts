@@ -20,9 +20,6 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3
 /** WhatsApp number in international format, digits only. */
 export const WHATSAPP_NUMBER = "917088875375";
 
-/** Kinikh Fishery has its own website. Change this when the subdomain is live. */
-export const FISHERY_URL = "https://fishery.kinikh.com";
-
 export type ServiceKey = "organics" | "handicraft" | "dairy" | "fishery";
 
 export type HeroSlide = {
@@ -69,9 +66,8 @@ export const heroSlides: HeroSlide[] = [
     key: "fishery",
     title: "Kinikh Fishery",
     line: "Live freshwater fish from clean rural ponds.",
-    cta: "Visit Kinikh Fishery",
-    href: FISHERY_URL,
-    external: true,
+    cta: "Explore Fishery",
+    href: "/fishery",
     poster: heroFishery,
     video: "/videos/fishery.mp4",
   },

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import heroFishery from "@/assets/hero-fishery.jpg";
-import { FISHERY_URL } from "@/lib/site";
 import { Reveal } from "./Reveal";
 
 export function FisherySection() {
@@ -15,14 +15,12 @@ export function FisherySection() {
           <p className="type-body mt-4 text-on-dark/90">
             Live, freshwater fish raised in clean rural ponds. We sell fish alive, never frozen.
           </p>
-          <a
-            href={FISHERY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/fishery"
             className="type-label mt-7 inline-flex h-12 items-center gap-2 rounded-full bg-on-dark px-6 text-foreground hover:opacity-90"
           >
-            Visit Kinikh Fishery <ArrowUpRight className="size-4" aria-hidden />
-          </a>
+            Explore Fishery <ArrowRight className="size-4" aria-hidden />
+          </Link>
         </Reveal>
       </div>
     </section>

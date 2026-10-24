@@ -88,8 +88,8 @@ export function HeroSlider() {
       })}
       <div className="hero-overlay absolute inset-0" aria-hidden />
 
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-6 md:px-8 md:pb-10">
-        <div key={`${slide.key}-${active}`} className="max-w-2xl text-on-dark">
+      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-6 md:px-8  md:pb-10">
+        <div key={`${slide.key}-${active}`} className="max-w-2xl text-on-dark lg:-ml-5">
           <h1 className="type-heading rise-in">{slide.title}</h1>
           <p className="type-body rise-in mt-3 text-on-dark/90" style={{ animationDelay: "120ms" }}>
             {slide.line}

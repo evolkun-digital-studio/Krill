@@ -46,6 +46,9 @@
   --color-honey-ink: var(--honey-ink);
   --color-oil-wash: var(--oil-wash);
   --color-craft: var(--craft);
+  --color-pond-night: var(--pond-night);
+  --color-pond-deep: var(--pond-deep);
+  --color-pond-mist: var(--pond-mist);
 }
 
 :root {
@@ -82,6 +85,9 @@
   --honey-ink: oklch(0.25 0.05 65);
   --oil-wash: oklch(0.955 0.045 100);
   --craft: oklch(0.31 0.06 38);
+  --pond-night: oklch(0.23 0.045 210);
+  --pond-deep: oklch(0.17 0.04 214);
+  --pond-mist: oklch(0.955 0.022 200);
   --product-image: #F3EEE4;
   --product-muted: #5E5A52;
   --shadow-soft: 0 20px 50px -25px color-mix(in oklab, var(--primary) 35%, transparent);
@@ -168,6 +174,18 @@ html.lenis, html.lenis body { height: auto; }
   .group:hover & {
     transform: scale(1.05);
   }
+}
+
+/* A hero photo starts slightly inset and settles to full width as it scrolls into view. Browsers without scroll timelines skip it. */
+@keyframes photo-settle {
+  from { transform: scale(0.88); }
+  to { transform: scale(1); }
+}
+@supports (animation-timeline: view()) {
+  .photo-settle { animation: photo-settle linear both; animation-timeline: view(); animation-range: entry 0% cover 35%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-settle { animation: none; }
 }
 
 @keyframes kenburns {
