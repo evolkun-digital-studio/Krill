@@ -1,12 +1,12 @@
 import type { StaticImageData } from "next/image";
 import mustard from "@/assets/Golden Mustard Oil Still Life.png";
-import groundnut from "@/assets/prod-groundnut-oil.jpg";
-import sesame from "@/assets/prod-sesame-oil.jpg";
-import coconut from "@/assets/prod-coconut-oil.jpg";
+import groundnut from "@/assets/Kinikh Wellness Oil Still Life.png";
+import sesame from "@/assets/Hemp Oil Bottle with Botanical Props (1) (1).png";
+import coconut from "@/assets/Kinikikh Coconut Oil Bottles in Sunlight.png";
 import forestHoney from "@/assets/K-Hive Raw Honey Still Life.png";
 import wildHoney from "@/assets/Rustic Honey Jar Still Life.png";
-import jaggery from "@/assets/prod-jaggery.jpg";
-import jaggeryPowder from "@/assets/prod-jaggery-powder.jpg";
+import jaggery from "@/assets/Kinikh Jaggery Glass Jar Pair.png";
+import jaggeryPowder from "@/assets/Himalayan Spice Blend Jar Still Life.png";
 import basket from "@/assets/prod-ringal-basket.jpg";
 import shawl from "@/assets/prod-woollen-shawl.jpg";
 import stole from "@/assets/prod-handloom-stole.jpg";
@@ -70,8 +70,8 @@ const honeySizes = ["250 g", "500 g", "1 kg"];
 
 export const products: Product[] = [
   p("cold-pressed-mustard-oil", "Cold-Pressed Mustard Oil", "organics", "Sharp, golden kachi ghani oil pressed slowly from village mustard.", "Pressed in a wooden kolhu at low speed so the oil keeps its natural pungency and colour. Left to settle and filtered through cloth.", mustard, oilSizes),
-  p("cold-pressed-groundnut-oil", "Cold-Pressed Groundnut Oil", "organics", "Mild, nutty oil for everyday cooking.", "Made from sun-dried groundnuts pressed without heat. Light in taste and good for daily cooking and frying.", groundnut, oilSizes),
-  p("cold-pressed-sesame-oil", "Cold-Pressed Sesame Oil", "organics", "Warm, aromatic til oil for cooking and care.", "Pressed from clean white sesame seeds. Used in kitchens and for traditional oil massage.", sesame, oilSizes),
+  p("cold-pressed-groundnut-oil", "Kinikh Wellness Oil Still Life", "organics", "Warm, aromatic til oil for care.", "Made from sun-dried groundnuts pressed without heat. Light in taste and good for daily cooking and frying.", groundnut, oilSizes),
+  p("cold-pressed-sesame-oil", "Cold-Pressed Sesame Oil", "organics", "Mild, nutty oil for everyday cooking.", "Pressed from clean white sesame seeds. Used in kitchens and for traditional oil massage.", sesame, oilSizes),
   p("cold-pressed-coconut-oil", "Cold-Pressed Coconut Oil", "organics", "Clear, gentle coconut oil from dried copra.", "Slowly pressed from dried coconut and settled naturally. Good for cooking, hair and skin.", coconut, oilSizes),
   p("raw-forest-honey", "Raw Forest Honey", "organics", "Dark, rich honey from wild forest flowers.", "Collected by hill beekeepers and strained gently. Never heated, so it may crystallise naturally in winter.", forestHoney, honeySizes),
   p("wild-flower-honey", "Wild Flower Honey", "organics", "Light, floral honey from mountain meadows.", "Gathered from hives placed in flowering hillside fields. Raw and unprocessed.", wildHoney, honeySizes),

@@ -26,7 +26,9 @@ export function ProductDetail({ product }: { product: Product }) {
           className="img-zoom aspect-square w-full object-cover"
         />
         {product.status === "sold_out" && (
-          <span className="type-label absolute left-4 top-4 rounded-full bg-ivory/95 px-3 py-1">Sold Out</span>
+          <span className="type-label absolute left-4 top-4 rounded-full bg-ivory/95 px-3 py-1">
+            {product.service === "handicraft" ? "Coming Soon" : "Sold Out"}
+          </span>
         )}
       </div>
       <div className="flex flex-col justify-center">
