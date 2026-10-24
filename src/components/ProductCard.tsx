@@ -31,11 +31,13 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="product-description line-clamp-2">{product.short}</p>
         <div className="product-price">
           <span className="type-label min-w-0">Price on request</span>
-          {product.status === "sold_out" && <span className="product-badge">Sold Out</span>}
+          {product.status === "sold_out" && (
+            <span className="product-badge">{product.service === "handicraft" ? "Coming Soon" : "Sold Out"}</span>
+          )}
         </div>
         <div className="mt-auto pt-4">
           <Button variant="product" onClick={addProduct} aria-live="polite" className="h-11 w-full">
-            {added ? "Added ✓" : "Add to Cart"}
+            {added ? "Requested ✓" : "Request to buy"}
           </Button>
         </div>
       </div>

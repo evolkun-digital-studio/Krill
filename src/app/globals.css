@@ -41,6 +41,11 @@
   --color-fishery: var(--fishery);
   --color-product-image: var(--product-image);
   --color-product-muted: var(--product-muted);
+  --color-honey-night: var(--honey-night);
+  --color-honey: var(--honey);
+  --color-honey-ink: var(--honey-ink);
+  --color-oil-wash: var(--oil-wash);
+  --color-craft-wash: var(--craft-wash);
 }
 
 :root {
@@ -72,6 +77,11 @@
   --dairy: oklch(0.78 0.07 230);
   --dairy-cream: oklch(0.95 0.035 90);
   --fishery: oklch(0.55 0.08 195);
+  --honey-night: oklch(0.2 0.035 65);
+  --honey: oklch(0.82 0.135 82);
+  --honey-ink: oklch(0.25 0.05 65);
+  --oil-wash: oklch(0.955 0.045 100);
+  --craft-wash: oklch(0.945 0.03 55);
   --product-image: #F3EEE4;
   --product-muted: #5E5A52;
   --shadow-soft: 0 20px 50px -25px color-mix(in oklab, var(--primary) 35%, transparent);
@@ -110,6 +120,14 @@
   @media (min-width: 768px) {
     font-size: 40px;
   }
+}
+/* Statement type for section openers, capped at 48px; one per section. */
+@utility type-display {
+  font-size: clamp(1.875rem, 1.35rem + 2.2vw, 3rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.028em;
+  text-wrap: balance;
 }
 @utility type-sub {
   font-size: 17px;

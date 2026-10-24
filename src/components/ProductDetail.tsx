@@ -26,7 +26,9 @@ export function ProductDetail({ product }: { product: Product }) {
           className="img-zoom aspect-square w-full object-cover"
         />
         {product.status === "sold_out" && (
-          <span className="type-label absolute left-4 top-4 rounded-full bg-ivory/95 px-3 py-1">Sold Out</span>
+          <span className="type-label absolute left-4 top-4 rounded-full bg-ivory/95 px-3 py-1">
+            {product.service === "handicraft" ? "Coming Soon" : "Sold Out"}
+          </span>
         )}
       </div>
       <div className="flex flex-col justify-center">
@@ -64,7 +66,7 @@ export function ProductDetail({ product }: { product: Product }) {
             onClick={() => add(product.slug, size, qty)}
             className="type-label h-12 flex-1 rounded-full bg-primary px-8 text-primary-foreground transition-opacity hover:opacity-90 sm:flex-none"
           >
-            Add to Cart
+            Request to buy
           </button>
         </div>
         <p className="type-label mt-4 text-muted-foreground">Made in small batches. Our team will confirm price and availability.</p>

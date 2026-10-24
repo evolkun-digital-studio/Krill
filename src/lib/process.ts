@@ -8,7 +8,7 @@ import beeJar from "@/assets/K-Hive Raw Honey Still Life.png";
 import oilSeeds from "@/assets/p-oil-seeds.jpg";
 import oilPress from "@/assets/p-oil-press.jpg";
 import oilDrip from "@/assets/p-oil-drip.jpg";
-import oilBottle from "@/assets/p-oil-bottle.jpg";
+import giftCrate from "@/assets/Kinikh Rustic Wellness Gift Crate.png";
 import loom from "@/assets/p-craft-loom.jpg";
 import cane from "@/assets/p-craft-cane.jpg";
 import wool from "@/assets/p-craft-wool.jpg";
@@ -32,7 +32,7 @@ export const oilSteps: Step[] = [
   { title: "Raw seeds", text: "Mustard, groundnut and sesame from nearby farms are cleaned and sun-dried.", image: oilSeeds, alt: "Baskets of mustard seeds, groundnuts and sesame seeds" },
   { title: "Slow pressing", text: "A wooden kolhu turns slowly so the seeds never get hot.", image: oilPress, alt: "Traditional wooden kolhu oil press crushing mustard seeds in a village" },
   { title: "Fresh oil", text: "Oil drips out on its own and rests for days to settle.", image: oilDrip, alt: "Fresh cold-pressed oil dripping from a wooden spout into a brass bowl" },
-  { title: "Bottled in glass", text: "Settled oil is filtered through cloth and filled into glass bottles.", image: oilBottle, alt: "Cold-pressed oils in clear glass bottles on a wooden shelf" },
+  { title: "Bottled in glass", text: "Settled oil is filtered through cloth and filled into glass bottles.", image: giftCrate, alt: "Kinikh rustic wellness gift crate" },
 ];
 
 export const craftSteps: Step[] = [

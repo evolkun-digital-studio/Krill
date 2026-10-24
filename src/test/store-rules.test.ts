@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "@jest/globals";
 import { NO_PALM_OIL_NOTE, products } from "@/lib/products";
 import { cartReducerAdd } from "@/lib/cart";
 import { HERO_INTERVAL_MS, heroSlides } from "@/lib/site";

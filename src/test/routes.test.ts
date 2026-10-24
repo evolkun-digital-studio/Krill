@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "@jest/globals";
 import nextConfig from "../../next.config";
 import sitemap from "@/app/sitemap";
 import { generateStaticParams } from "@/app/products/[slug]/page";
