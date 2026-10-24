@@ -41,7 +41,12 @@ export function RequestOrderForm() {
     }
     setErrors({});
     const msg = buildOrderMessage(items, r.data);
-    window.open(whatsappLink(msg), "_blank", "noopener");
+    // Open WhatsApp in a new tab; if a pop-up blocker or in-app browser refuses, go there in this tab.
+    // ("noopener" as a window feature would make window.open always return null, hiding a block.)
+    const url = whatsappLink(msg);
+    const tab = window.open(url, "_blank");
+    if (tab) tab.opener = null;
+    else window.location.assign(url);
     setSent(msg);
     clear();
   };

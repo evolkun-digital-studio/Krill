@@ -10,15 +10,15 @@ export const SITE = {
   parent: "A KINIKH Group Enterprise",
   description:
     "KRIL brings you honey, cold-pressed oils, handicrafts and village dairy from rural and indigenous producers of Uttarakhand and the Northeast.",
-  phone: "+91 70888 075375",
-  email: "rural@kinikh.com",
+  phone: "+91 70888 75375",
+  email: "livelihood@kinikh.com",
 };
 
 /** Public origin of this site, used for canonical URLs, Open Graph images and the sitemap. */
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/+$/, "");
 
 /** WhatsApp number in international format, digits only. */
-export const WHATSAPP_NUMBER = "9170888075375";
+export const WHATSAPP_NUMBER = "917088875375";
 
 /** Kinikh Fishery has its own website. Change this when the subdomain is live. */
 export const FISHERY_URL = "https://fishery.kinikh.com";
