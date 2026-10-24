@@ -1,0 +1,3 @@
+- [x] Apply shared product-card and section layout across all grids.
+- [x] Add the all-products destination and temporary Added confirmation.
+- [x] Verify alignment at requested widths and cart behavior.
