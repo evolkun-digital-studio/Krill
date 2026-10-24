@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { ProductCard } from "@/components/ProductCard";
@@ -6,7 +5,6 @@ import { products } from "@/lib/products";
 
 const { add } = vi.hoisted(() => ({ add: vi.fn() }));
 vi.mock("@/lib/cart", () => ({ useCart: () => ({ add }) }));
-vi.mock("@tanstack/react-router", () => ({ Link: ({ children }: { children: ReactNode }) => <a>{children}</a> }));
 
 afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.useRealTimers(); add.mockClear(); });
 

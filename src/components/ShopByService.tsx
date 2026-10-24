@@ -1,5 +1,8 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { productsByService } from "@/lib/products";
@@ -58,14 +61,14 @@ export function ShopByService() {
             const slide = heroSlides.find((item) => item.key === service.key);
             const photos = service.key === "fishery" ? [] : productsByService(service.key).slice(0, 3);
             const content = <>
-              <img className="service-panel-image" src={slide?.poster} alt={service.alt} loading="lazy" />
+              {slide && <Image className="service-panel-image" src={slide.poster} alt={service.alt} sizes="(min-width: 1024px) 40vw, 85vw" />}
               <div className="service-panel-shade" aria-hidden="true" />
               <div className="service-panel-content">
                 <h3 className="type-sub">Kinikh {service.name}</h3>
                 <div className="service-panel-details">
                   <p className="type-body service-panel-line">{service.line}</p>
                   {photos.length > 0 ? <div className="service-product-photos">
-                    {photos.map((product) => <img key={product.slug} src={product.image} alt={product.name} loading="lazy" width={64} height={64} />)}
+                    {photos.map((product) => <Image key={product.slug} src={product.image} alt={product.name} width={64} height={64} />)}
                   </div> : <p className="type-label service-fish-label">Live fish, never frozen</p>}
                   <span className="type-label service-shop-link">{service.key === "fishery" ? "Visit Kinikh Fishery" : `Shop ${service.name}`}{service.key === "fishery" ? <ArrowUpRight aria-hidden="true" /> : <ArrowRight aria-hidden="true" />}</span>
                 </div>
@@ -84,7 +87,7 @@ export function ShopByService() {
               ref: (node: HTMLAnchorElement | null) => { panels.current[index] = node; },
             };
             return <Button key={service.key} asChild variant="ghost" className="service-panel-button">
-              {service.key === "fishery" ? <a {...shared} href={FISHERY_URL} target="_blank" rel="noopener noreferrer">{content}</a> : <Link {...shared} to={service.to}>{content}</Link>}
+              {service.key === "fishery" ? <a {...shared} href={FISHERY_URL} target="_blank" rel="noopener noreferrer">{content}</a> : <Link {...shared} href={service.to}>{content}</Link>}
             </Button>;
           })}
         </div>

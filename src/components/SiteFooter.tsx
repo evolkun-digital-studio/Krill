@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Logo } from "./Logo";
 import { FISHERY_URL, SITE } from "@/lib/site";
@@ -16,15 +16,15 @@ export function SiteFooter() {
           </p>
         </div>
         <nav className="grid grid-cols-2 gap-x-6 gap-y-2">
-          <Link to="/organics" className={linkCls}>Organics</Link>
-          <Link to="/handicraft" className={linkCls}>Handicraft</Link>
-          <Link to="/dairy" className={linkCls}>Dairy</Link>
+          <Link href="/organics" className={linkCls}>Organics</Link>
+          <Link href="/handicraft" className={linkCls}>Handicraft</Link>
+          <Link href="/dairy" className={linkCls}>Dairy</Link>
           <a href={FISHERY_URL} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1 ${linkCls}`}>
             Kinikh Fishery <ArrowUpRight className="size-4" aria-hidden />
           </a>
-          <Link to="/about" className={linkCls}>About</Link>
-          <Link to="/contact" className={linkCls}>Contact</Link>
-          <Link to="/request-order" className={linkCls}>Request to Order</Link>
+          <Link href="/about" className={linkCls}>About</Link>
+          <Link href="/contact" className={linkCls}>Contact</Link>
+          <Link href="/request-order" className={linkCls}>Request to Order</Link>
         </nav>
         <div className="space-y-2">
           <a href={`tel:${SITE.phone.replace(/\s/g, "")}`} className={`block ${linkCls}`}>{SITE.phone}</a>

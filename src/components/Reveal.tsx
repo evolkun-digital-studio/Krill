@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export function Reveal({ children, className = "" }: { children: ReactNode; className?: string }) {

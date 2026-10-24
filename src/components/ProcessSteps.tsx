@@ -1,6 +1,7 @@
+import Image, { type StaticImageData } from "next/image";
 import { Reveal } from "./Reveal";
 
-export type Step = { title: string; text: string; image: string; alt: string };
+export type Step = { title: string; text: string; image: StaticImageData; alt: string };
 
 const cols: Record<number, string> = {
   3: "md:grid-cols-3",
@@ -39,7 +40,12 @@ export function ProcessSteps({
               </span>
               <Reveal>
                 <div className="group overflow-hidden rounded-2xl">
-                  <img src={s.image} alt={s.alt} loading="lazy" width={1024} height={768} className="img-zoom aspect-[4/3] w-full object-cover" />
+                  <Image
+                    src={s.image}
+                    alt={s.alt}
+                    sizes="(min-width: 1280px) 300px, (min-width: 768px) 25vw, 100vw"
+                    className="img-zoom aspect-[4/3] w-full object-cover"
+                  />
                 </div>
                 <h3 className="type-sub mt-5">{s.title}</h3>
                 <p className="type-body mt-2 text-muted-foreground">{s.text}</p>

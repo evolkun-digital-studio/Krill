@@ -1,4 +1,7 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useCart } from "@/lib/cart";
 import type { Product } from "@/lib/products";
@@ -18,11 +21,11 @@ export function ProductCard({ product }: { product: Product }) {
   }
   return (
     <article className="product-card group">
-      <Link to="/products/$slug" params={{ slug: product.slug }} className="product-image">
-        <img src={product.image} alt={product.name} loading="lazy" width={816} height={1020} />
+      <Link href={`/products/${product.slug}`} className="product-image">
+        <Image src={product.image} alt={product.name} sizes="(min-width: 1280px) 300px, (min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" />
       </Link>
       <div className="product-card-content">
-        <Link to="/products/$slug" params={{ slug: product.slug }} className="min-w-0" title={product.name}>
+        <Link href={`/products/${product.slug}`} className="min-w-0" title={product.name}>
           <h3 className="type-sub truncate">{product.name}</h3>
         </Link>
         <p className="product-description line-clamp-2">{product.short}</p>

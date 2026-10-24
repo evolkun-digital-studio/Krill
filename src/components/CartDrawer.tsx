@@ -1,4 +1,7 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
 import { Minus, Plus, Trash2, X } from "lucide-react";
 import { useEffect } from "react";
 import { useCart } from "@/lib/cart";
@@ -58,7 +61,7 @@ export function CartDrawer() {
                 if (!prod) return null;
                 return (
                   <li key={`${i.slug}-${i.size}`} className="flex gap-4 py-4">
-                    <img src={prod.image} alt={prod.name} className="size-20 rounded-xl object-cover" loading="lazy" />
+                    <Image src={prod.image} alt={prod.name} sizes="80px" className="size-20 rounded-xl object-cover" />
                     <div className="flex-1 space-y-2">
                       <p className="type-body font-semibold leading-snug">{prod.name}</p>
                       <p className="type-label text-muted-foreground">{i.size}</p>
@@ -80,7 +83,7 @@ export function CartDrawer() {
           <p className="type-label text-muted-foreground">Price will be confirmed by our team.</p>
           {items.length > 0 ? (
             <Link
-              to="/request-order"
+              href="/request-order"
               onClick={() => setOpen(false)}
               className="type-label flex h-12 w-full items-center justify-center rounded-full bg-primary text-primary-foreground transition-opacity hover:opacity-90"
             >

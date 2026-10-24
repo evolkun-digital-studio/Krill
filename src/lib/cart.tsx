@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
 export type CartItem = { slug: string; size: string; qty: number };
@@ -32,6 +34,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const raw = window.localStorage.getItem(KEY);
       if (raw) {
         const parsed = JSON.parse(raw);
+        // Read storage only after hydration so the server and first client render agree.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         if (Array.isArray(parsed)) setItems(parsed.filter((i) => i && typeof i.slug === "string"));
       }
     } catch {

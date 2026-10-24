@@ -1,3 +1,4 @@
+import type { StaticImageData } from "next/image";
 import type { ReactNode } from "react";
 import { PageHeader } from "./PageHeader";
 import { ProductSection } from "./ProductSection";
@@ -16,7 +17,7 @@ export function ServiceShop({
   service: ShopService;
   title: string;
   text: string;
-  image: string;
+  image: StaticImageData;
   alt: string;
   shopHeading: string;
   shopText: string;
@@ -30,14 +31,3 @@ export function ServiceShop({
     </>
   );
 }
-
-export const pageMeta = (title: string, description: string) => ({
-  meta: [
-    { title },
-    { name: "description", content: description },
-    { property: "og:title", content: title },
-    { property: "og:description", content: description },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary_large_image" },
-  ],
-});

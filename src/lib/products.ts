@@ -1,3 +1,4 @@
+import type { StaticImageData } from "next/image";
 import mustard from "@/assets/prod-mustard-oil.jpg";
 import groundnut from "@/assets/prod-groundnut-oil.jpg";
 import sesame from "@/assets/prod-sesame-oil.jpg";
@@ -29,7 +30,7 @@ export type Product = {
   service: ShopService;
   short: string;
   description: string;
-  image: string;
+  image: StaticImageData;
   sizes: string[];
   price: null;
   status: "sold_out" | "available";
@@ -50,7 +51,7 @@ const p = (
   service: ShopService,
   short: string,
   description: string,
-  image: string,
+  image: StaticImageData,
   sizes: string[],
 ): Product => ({
   slug,

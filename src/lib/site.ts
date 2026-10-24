@@ -2,7 +2,7 @@ import heroOrganics from "@/assets/hero-organics.jpg";
 import heroHandicraft from "@/assets/hero-handicraft.jpg";
 import heroDairy from "@/assets/hero-dairy.jpg";
 import heroFishery from "@/assets/hero-fishery.jpg";
-import fisheryVideo from "@/assets/fishery.mp4";
+import type { StaticImageData } from "next/image";
 
 export const SITE = {
   name: "KRIL",
@@ -13,6 +13,9 @@ export const SITE = {
   phone: "+91 70888 075375",
   email: "rural@kinikh.com",
 };
+
+/** Public origin of this site, used for canonical URLs, Open Graph images and the sitemap. */
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/+$/, "");
 
 /** WhatsApp number in international format, digits only. */
 export const WHATSAPP_NUMBER = "9170888075375";
@@ -29,7 +32,7 @@ export type HeroSlide = {
   cta: string;
   href: string;
   external?: boolean;
-  poster: string;
+  poster: StaticImageData;
   /** Leave empty until a video is added; the poster then slowly zooms. */
   video?: string;
 };
@@ -67,7 +70,7 @@ export const heroSlides: HeroSlide[] = [
     href: FISHERY_URL,
     external: true,
     poster: heroFishery,
-    video: fisheryVideo,
+    video: "/videos/fishery.mp4",
   },
 ];
 

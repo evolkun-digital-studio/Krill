@@ -1,4 +1,7 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, ShoppingBag, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
@@ -18,9 +21,12 @@ const after = [
 
 export function SiteNav() {
   const { count, setOpen } = useCart();
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [menu, setMenu] = useState(false);
+  // The menu belongs to the page it was opened on, so it closes by itself on navigation.
+  const [menuPath, setMenuPath] = useState<string | null>(null);
+  const menu = menuPath === pathname;
+  const setMenu = (fn: (open: boolean) => boolean) => setMenuPath(fn(menu) ? pathname : null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -28,12 +34,13 @@ export function SiteNav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  useEffect(() => setMenu(false), [pathname]);
 
   const overHero = pathname === "/" && !scrolled && !menu;
   const tone = overHero ? "text-on-dark" : "text-foreground";
 
   const linkCls = `type-label transition-opacity hover:opacity-70 ${tone}`;
+  const active = (to: string, exact: boolean) =>
+    (exact ? pathname === to : pathname === to || pathname.startsWith(`${to}/`)) ? " underline underline-offset-8" : "";
 
   return (
     <header
@@ -42,13 +49,13 @@ export function SiteNav() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
-        <Link to="/" aria-label="KRIL home">
+        <Link href="/" aria-label="KRIL home">
           <Logo inverted={overHero} className="h-12 md:h-14" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
           {links.map((l) => (
-            <Link key={l.to} to={l.to} className={linkCls} activeOptions={{ exact: true }} activeProps={{ className: "underline underline-offset-8" }}>
+            <Link key={l.to} href={l.to} className={linkCls + active(l.to, true)}>
               {l.label}
             </Link>
           ))}
@@ -56,7 +63,7 @@ export function SiteNav() {
             Fishery <ArrowUpRight className="size-3.5" aria-hidden />
           </a>
           {after.map((l) => (
-            <Link key={l.to} to={l.to} className={linkCls} activeProps={{ className: "underline underline-offset-8" }}>
+            <Link key={l.to} href={l.to} className={linkCls + active(l.to, false)}>
               {l.label}
             </Link>
           ))}
@@ -88,7 +95,7 @@ export function SiteNav() {
       {menu && (
         <nav className="border-t border-border bg-ivory px-5 pb-6 pt-2 lg:hidden">
           {links.map((l) => (
-            <Link key={l.to} to={l.to} className="type-body block py-3 text-foreground">
+            <Link key={l.to} href={l.to} className="type-body block py-3 text-foreground">
               {l.label}
             </Link>
           ))}
@@ -96,7 +103,7 @@ export function SiteNav() {
             Fishery <ArrowUpRight className="size-4" aria-hidden />
           </a>
           {after.map((l) => (
-            <Link key={l.to} to={l.to} className="type-body block py-3 text-foreground">
+            <Link key={l.to} href={l.to} className="type-body block py-3 text-foreground">
               {l.label}
             </Link>
           ))}

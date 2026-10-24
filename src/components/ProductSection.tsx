@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import type { Product } from "@/lib/products";
 import { Button } from "./ui/button";
 import { ProductGrid } from "./ProductCard";
@@ -16,7 +16,7 @@ export function ProductSection({ title, intro, items }: { title: string; intro?:
         <ProductGrid items={items} />
         <div className="mt-12 flex justify-center">
           <Button asChild variant="link" className="type-label h-auto p-0">
-            <Link to="/products">View all products</Link>
+            <Link href="/products">View all products</Link>
           </Button>
         </div>
       </div>
