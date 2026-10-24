@@ -1,4 +1,4 @@
-import heroDairy from "@/assets/hero-dairy.jpg";
+import heroDairy from "@/assets/fresh-milk.jpg";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { ServiceShop } from "@/components/ServiceShop";
 import { pageMeta } from "@/lib/metadata";
@@ -17,7 +17,7 @@ export default function Dairy() {
       title="Kinikh Dairy"
       text="Fresh village dairy, made the traditional way."
       image={heroDairy}
-      alt="Desi cows grazing in a green village pasture"
+      alt="Fresh village milk"
       shopHeading="Shop Dairy"
       shopText="Dairy is made fresh to order. Our team will confirm what can reach you and when."
     >

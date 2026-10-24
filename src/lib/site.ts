@@ -1,6 +1,6 @@
 import heroOrganics from "@/assets/hero-organics.jpg";
 import heroHandicraft from "@/assets/hero-handicraft.jpg";
-import heroDairy from "@/assets/hero-dairy.jpg";
+import heroDairy from "@/assets/fresh-milk.jpg";
 import heroFishery from "@/assets/hero-fishery.jpg";
 import type { StaticImageData } from "next/image";
 
@@ -60,7 +60,7 @@ export const heroSlides: HeroSlide[] = [
     cta: "Shop Dairy",
     href: "/dairy",
     poster: heroDairy,
-    video: "/videos/dairy.mp4",
+    video: "/videos/fresh_dairy.mov",
   },
   {
     key: "fishery",

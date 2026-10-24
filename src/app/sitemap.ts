@@ -3,12 +3,13 @@ import { products } from "@/lib/products";
 import { SITE_URL } from "@/lib/site";
 
 const pages = [
-  "/",
+  // "/",
   "/agro",
   "/organics",
   "/handicraft",
   "/dairy",
-  "/fishery",
+  "/agro-artisan",
+  // "/fishery",
   "/products",
   "/about",
   "/contact",

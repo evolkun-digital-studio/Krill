@@ -49,7 +49,7 @@ export function ShopByService() {
       <div className="service-shop-inner mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
         <div className="service-shop-heading mb-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
-            <h2 id="service-shop-heading" className="type-heading">Shop by service</h2>
+            <h2 id="service-shop-heading" className="type-heading">From Our Villages,To You.</h2>
             <p className="type-body mt-4 text-muted-foreground">Honey, oil, craft, milk and live fish, all from villages we work with.</p>
           </div>
           <div className="service-notes" aria-live="polite" aria-atomic="true">

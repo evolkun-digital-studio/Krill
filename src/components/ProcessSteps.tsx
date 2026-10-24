@@ -1,6 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 import { Reveal } from "./Reveal";
 import { ScrollRail } from "./ScrollRail";
+import { StackCards } from "./StackCards";
 
 export type Step = { title: string; text: string; image: StaticImageData; alt: string };
 
@@ -70,14 +71,10 @@ function Stack({ heading, intro, steps, highlight }: Props) {
           <h2 className="type-display">{heading}</h2>
           <p className="type-body mx-auto mt-6 max-w-xl text-muted-foreground">{intro}</p>
         </Reveal>
-        <ol className="mt-14 space-y-4 md:mt-20 md:space-y-6">
+        <div className="mt-2 md:mt-4">
+          <StackCards>
           {steps.map((s, i) => (
-            <li
-              key={s.title}
-              style={{ ["--stack-top" as string]: `${96 + i * 18}px` }}
-              className="overflow-hidden rounded-3xl bg-card shadow-soft md:sticky md:top-[var(--stack-top)]"
-            >
-              <div className={`grid md:min-h-[24rem] md:grid-cols-2 ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}>
+              <div key={s.title} className={`grid h-full bg-card md:min-h-[24rem] md:grid-cols-2 ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}>
                 <div className="flex flex-col justify-center p-8 md:p-12">
                   <p className="type-label text-muted-foreground">Step {i + 1} of {steps.length}</p>
                   <h3 className="mt-4 text-2xl font-semibold leading-tight tracking-tight md:text-4xl">{s.title}</h3>
@@ -87,11 +84,11 @@ function Stack({ heading, intro, steps, highlight }: Props) {
                   <Image src={s.image} alt={s.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
                 </div>
               </div>
-            </li>
           ))}
-        </ol>
+          </StackCards>
+        </div>
         {highlight && (
-          <Reveal className="mx-auto mt-16 max-w-3xl px-2 text-center">
+          <Reveal className="mx-auto mt-6 max-w-3xl px-2 text-center md:mt-8">
             <p className="text-xl font-semibold leading-snug tracking-tight text-primary md:text-3xl">{highlight}</p>
           </Reveal>
         )}

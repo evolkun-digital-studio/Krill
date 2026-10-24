@@ -15,6 +15,7 @@ const links = [
   { label: "Fishery", to: "/fishery" },
 ] as const;
 const after = [
+  { label: "Agro Artisan", to: "/agro-artisan" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ] as const;

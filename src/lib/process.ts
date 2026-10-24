@@ -1,6 +1,6 @@
 import heroOrganics from "@/assets/hero-organics.jpg";
 import heroHandicraft from "@/assets/hero-handicraft.jpg";
-import heroDairy from "@/assets/hero-dairy.jpg";
+import heroDairy from "@/assets/fresh-milk.jpg";
 import heroFishery from "@/assets/hero-fishery.jpg";
 import beeFrame from "@/assets/p-bee-frame.jpg";
 import beeExtract from "@/assets/p-bee-extract.jpg";
@@ -8,7 +8,7 @@ import beeJar from "@/assets/K-Hive Raw Honey Still Life.png";
 import oilSeeds from "@/assets/p-oil-seeds.jpg";
 import oilPress from "@/assets/p-oil-press.jpg";
 import oilDrip from "@/assets/p-oil-drip.jpg";
-import oilBottle from "@/assets/p-oil-bottle.jpg";
+import giftCrate from "@/assets/Kinikh Rustic Wellness Gift Crate.png";
 import loom from "@/assets/p-craft-loom.jpg";
 import cane from "@/assets/p-craft-cane.jpg";
 import wool from "@/assets/p-craft-wool.jpg";
@@ -32,7 +32,7 @@ export const oilSteps: Step[] = [
   { title: "Raw seeds", text: "Mustard, groundnut and sesame from nearby farms are cleaned and sun-dried.", image: oilSeeds, alt: "Baskets of mustard seeds, groundnuts and sesame seeds" },
   { title: "Slow pressing", text: "A wooden kolhu turns slowly so the seeds never get hot.", image: oilPress, alt: "Traditional wooden kolhu oil press crushing mustard seeds in a village" },
   { title: "Fresh oil", text: "Oil drips out on its own and rests for days to settle.", image: oilDrip, alt: "Fresh cold-pressed oil dripping from a wooden spout into a brass bowl" },
-  { title: "Bottled in glass", text: "Settled oil is filtered through cloth and filled into glass bottles.", image: oilBottle, alt: "Cold-pressed oils in clear glass bottles on a wooden shelf" },
+  { title: "Bottled in glass", text: "Settled oil is filtered through cloth and filled into glass bottles.", image: giftCrate, alt: "Kinikh rustic wellness gift crate" },
 ];
 
 export const craftSteps: Step[] = [
@@ -44,7 +44,7 @@ export const craftSteps: Step[] = [
 export const craftExtra = wood;
 
 export const dairySteps: Step[] = [
-  { title: "Open pastures", text: "Desi cows graze freely on green village pastures.", image: heroDairy, alt: "Cows grazing in a green village pasture at golden hour" },
+  { title: "Open pastures", text: "Desi cows graze freely on green village pastures.", image: heroDairy, alt: "Fresh milk from village cows" },
   { title: "Clean milking", text: "Milking is done by hand into clean steel buckets.", image: milk, alt: "Farmer hand-milking a cow into a steel bucket" },
   { title: "Fresh milk", text: "Milk is collected in steel cans the same morning.", image: cans, alt: "Fresh milk in steel cans in a village courtyard" },
   { title: "Bilona churning", text: "Curd is churned with a wooden bilona to make butter and ghee.", image: bilona, alt: "Woman churning curd in a clay pot with a wooden bilona" },
