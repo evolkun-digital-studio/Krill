@@ -1,10 +1,10 @@
 import type { StaticImageData } from "next/image";
-import mustard from "@/assets/prod-mustard-oil.jpg";
+import mustard from "@/assets/Golden Mustard Oil Still Life.png";
 import groundnut from "@/assets/prod-groundnut-oil.jpg";
 import sesame from "@/assets/prod-sesame-oil.jpg";
 import coconut from "@/assets/prod-coconut-oil.jpg";
-import forestHoney from "@/assets/prod-forest-honey.jpg";
-import wildHoney from "@/assets/prod-wildflower-honey.jpg";
+import forestHoney from "@/assets/K-Hive Raw Honey Still Life.png";
+import wildHoney from "@/assets/Rustic Honey Jar Still Life.png";
 import jaggery from "@/assets/prod-jaggery.jpg";
 import jaggeryPowder from "@/assets/prod-jaggery-powder.jpg";
 import basket from "@/assets/prod-ringal-basket.jpg";

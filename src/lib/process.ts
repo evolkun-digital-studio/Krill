@@ -4,7 +4,7 @@ import heroDairy from "@/assets/hero-dairy.jpg";
 import heroFishery from "@/assets/hero-fishery.jpg";
 import beeFrame from "@/assets/p-bee-frame.jpg";
 import beeExtract from "@/assets/p-bee-extract.jpg";
-import beeJar from "@/assets/p-bee-jar.jpg";
+import beeJar from "@/assets/K-Hive Raw Honey Still Life.png";
 import oilSeeds from "@/assets/p-oil-seeds.jpg";
 import oilPress from "@/assets/p-oil-press.jpg";
 import oilDrip from "@/assets/p-oil-drip.jpg";
@@ -25,7 +25,7 @@ export const beeSteps: Step[] = [
   { title: "Hives in the hills", text: "Wooden bee boxes sit in flowering hillside fields, away from sprays and roads.", image: heroOrganics, alt: "Beekeeper in a veil lifting a honey frame beside wooden bee boxes on a Himalayan hillside" },
   { title: "Full frames", text: "Beekeepers check each frame and take only what the colony can spare.", image: beeFrame, alt: "Honeycomb frame full of capped golden honey with bees" },
   { title: "Gentle extraction", text: "Honey is spun out by hand and strained through cloth, never heated.", image: beeExtract, alt: "Honey flowing from a hand extractor into a steel vessel" },
-  { title: "Into glass jars", text: "Raw honey is poured straight into clean glass jars.", image: beeJar, alt: "Golden honey being poured into glass jars on a wooden table" },
+  { title: "Into glass jars", text: "Raw honey is poured straight into clean glass jars.", image: beeJar, alt: "K-Hive raw honey jar with honeycomb and a wooden dipper" },
 ];
 
 export const oilSteps: Step[] = [

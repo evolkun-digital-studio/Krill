@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ClipboardList, MessageCircle, Truck } from "lucide-react";
 import portrait from "@/assets/portrait-community.jpg";
 import oilPress from "@/assets/p-oil-press.jpg";
-import beeJar from "@/assets/p-bee-jar.jpg";
+import beeJar from "@/assets/K-Hive Raw Honey Still Life.png";
 import loom from "@/assets/p-craft-loom.jpg";
 import wood from "@/assets/p-craft-wood.jpg";
 import bilona from "@/assets/p-dairy-bilona.jpg";
@@ -20,7 +20,7 @@ import { SITE } from "@/lib/site";
 export const metadata = pageMeta("KRIL · Kinikh Rural Indigenous Livelihood", SITE.description, "/");
 
 const bands = [
-  { title: "Kinikh Organics", text: "Hill honey taken gently from the hive, and oil pressed slowly in a wooden kolhu.", to: "/organics", images: [beeJar, oilPress], alts: ["Honey poured into glass jars", "Wooden kolhu pressing mustard seeds"] },
+  { title: "Kinikh Organics", text: "Hill honey taken gently from the hive, and oil pressed slowly in a wooden kolhu.", to: "/organics", images: [beeJar, oilPress], alts: ["K-Hive raw honey jar with honeycomb and a wooden dipper", "Wooden kolhu pressing mustard seeds"] },
   { title: "Kinikh Handicraft", text: "Looms in the Northeast and carving tools in Uttarakhand, used by the same families for generations.", to: "/handicraft", images: [loom, wood], alts: ["Woman weaving on a traditional loom", "Hands carving a wooden bowl"] },
   { title: "Kinikh Dairy", text: "Milk from village cows, churned by hand into butter and ghee.", to: "/dairy", images: [milk, bilona], alts: ["Farmer milking a cow into a steel bucket", "Woman churning curd with a bilona"] },
 ] as const;
