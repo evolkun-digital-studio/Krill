@@ -21,13 +21,12 @@ export default function Dairy() {
       shopHeading="Shop Dairy"
       shopText="Dairy is made fresh to order. Our team will confirm what can reach you and when."
     >
-      <div className="bg-dairy-cream">
-        <ProcessSteps
-          heading="From pasture to pot"
-          intro="Our cows graze in open village fields. Milk is handled with care and turned into ghee, paneer and curd the way it has always been done at home."
-          steps={dairySteps}
-        />
-      </div>
+      <ProcessSteps
+        variant="journey"
+        heading="From pasture to pot"
+        intro="Our cows graze in open village fields. Milk is handled with care and turned into ghee, paneer and curd the way it has always been done at home."
+        steps={dairySteps}
+      />
     </ServiceShop>
   );
 }

@@ -21,13 +21,12 @@ export default function Handicraft() {
       shopHeading="Shop Handicraft"
       shopText="Each piece is made by hand, so no two are exactly alike. Send a request and we will check what the artisans have ready."
     >
-      <div className="bg-card">
-        <ProcessSteps
-          heading="Made by hand"
-          intro="Weavers in the Northeast and craftspeople in Uttarakhand's mountain villages make every piece at home, using skills passed down in their families."
-          steps={craftSteps}
-        />
-      </div>
+      <ProcessSteps
+        variant="bento"
+        heading="Made by hand"
+        intro="Weavers in the Northeast and craftspeople in Uttarakhand's mountain villages make every piece at home, using skills passed down in their families."
+        steps={craftSteps}
+      />
     </ServiceShop>
   );
 }

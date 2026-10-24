@@ -21,14 +21,14 @@ export default function Organics() {
       shopHeading="Shop Organics"
       shopText="Everything here is made in small batches. Add what you need and our team will confirm price and availability."
     >
-      <div className="bg-card">
-        <ProcessSteps
-          heading="Bee farming"
-          intro="Our honey comes from beekeepers in the hills who keep their hives among wild flowers and take honey only when the bees have plenty."
-          steps={beeSteps}
-        />
-      </div>
       <ProcessSteps
+        variant="rail"
+        heading="Bee farming"
+        intro="Our honey comes from beekeepers in the hills who keep their hives among wild flowers and take honey only when the bees have plenty."
+        steps={beeSteps}
+      />
+      <ProcessSteps
+        variant="stack"
         heading="Cold-press oil"
         intro="Seeds are pressed the old way, slowly, so the oil keeps its taste, colour and goodness."
         steps={oilSteps}

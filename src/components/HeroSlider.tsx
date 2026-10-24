@@ -88,7 +88,7 @@ export function HeroSlider() {
       })}
       <div className="hero-overlay absolute inset-0" aria-hidden />
 
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-36 md:px-8 md:pb-40">
+      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-6 md:px-8 md:pb-10">
         <div key={`${slide.key}-${active}`} className="max-w-2xl text-on-dark">
           <h1 className="type-heading rise-in">{slide.title}</h1>
           <p className="type-body rise-in mt-3 text-on-dark/90" style={{ animationDelay: "120ms" }}>
@@ -116,7 +116,7 @@ export function HeroSlider() {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 z-10">
+      {/* <div className="absolute inset-x-0 bottom-0 z-10">
         <div className="mx-auto grid max-w-7xl grid-cols-4 gap-3 px-5 pb-8 md:gap-6 md:px-8">
           {heroSlides.map((s, i) => (
             <button
@@ -133,7 +133,7 @@ export function HeroSlider() {
             </button>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

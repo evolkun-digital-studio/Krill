@@ -35,7 +35,7 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
         <div className="mt-auto pt-4">
           <Button variant="product" onClick={addProduct} aria-live="polite" className="h-11 w-full">
-            {added ? "Added ✓" : "Add to Cart"}
+            {added ? "Requested ✓" : "Request to buy"}
           </Button>
         </div>
       </div>

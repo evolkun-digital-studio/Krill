@@ -64,7 +64,7 @@ export function ProductDetail({ product }: { product: Product }) {
             onClick={() => add(product.slug, size, qty)}
             className="type-label h-12 flex-1 rounded-full bg-primary px-8 text-primary-foreground transition-opacity hover:opacity-90 sm:flex-none"
           >
-            Add to Cart
+            Request to buy
           </button>
         </div>
         <p className="type-label mt-4 text-muted-foreground">Made in small batches. Our team will confirm price and availability.</p>

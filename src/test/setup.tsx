@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { vi } from "vitest";
-import "@testing-library/jest-dom/vitest";
+import { jest } from "@jest/globals";
+import "@testing-library/jest-dom";
 
 Object.defineProperty(window, "scrollTo", {
   writable: true,
@@ -21,9 +21,9 @@ Object.defineProperty(window, "matchMedia", {
   }),
 });
 
-// Vite resolves image imports to URL strings, while next/image expects Next's build-time
-// image metadata; render plain elements so components can be tested in jsdom.
-vi.mock("next/image", () => ({
+// Render framework components as plain elements for focused component tests in jsdom.
+jest.mock("next/image", () => ({
+  __esModule: true,
   default: ({ src, alt, fill, preload, sizes, ...rest }: Record<string, unknown>) => {
     const url = typeof src === "string" ? src : (src as { src: string }).src;
     // eslint-disable-next-line @next/next/no-img-element
@@ -31,7 +31,8 @@ vi.mock("next/image", () => ({
   },
 }));
 
-vi.mock("next/link", () => ({
+jest.mock("next/link", () => ({
+  __esModule: true,
   default: ({ href, children, ...rest }: { href: string; children: ReactNode }) => (
     <a href={href} {...rest}>
       {children}
