@@ -81,8 +81,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-3 md:px-5">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 overflow-hidden rounded-3xl bg-secondary md:grid-cols-2">
+      <section className="mx-auto max-w-7xl px-5 md:px-8">
+        <div className="grid items-center gap-10 overflow-hidden rounded-3xl bg-secondary md:grid-cols-2">
           <div className="group h-full overflow-hidden">
             <Image src={portrait} alt="Rural producers from a KRIL partner village" sizes="(min-width: 768px) 50vw, 100vw" className="img-zoom h-full min-h-72 w-full object-cover" />
           </div>

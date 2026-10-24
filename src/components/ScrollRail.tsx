@@ -42,18 +42,18 @@ export function ScrollRail({ children, label }: { children: ReactNode; label: st
         ref={ref}
         aria-label={label}
         tabIndex={0}
-        className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 pl-[max(1.25rem,calc((100vw-80rem)/2+2rem))] pr-5 [scrollbar-width:none] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-honey-ink [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 pl-[max(1.25rem,calc(50%-38rem))] pr-5 md:pl-[max(2rem,calc(50%-38rem))] md:pr-8 [scrollbar-width:none] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-honey-ink [&::-webkit-scrollbar]:hidden"
       >
         {children}
       </ol>
-      <div className="mx-auto mt-8 flex max-w-7xl justify-end gap-2 px-5 md:px-8">
+      {/* <div className="mx-auto mt-8 flex max-w-7xl justify-end gap-2 px-5 md:px-8">
         <button type="button" aria-label="Previous" onClick={() => go(-1)} disabled={edge.start} className={btn}>
           <ChevronLeft className="size-5" aria-hidden />
         </button>
         <button type="button" aria-label="Next" onClick={() => go(1)} disabled={edge.end} className={btn}>
           <ChevronRight className="size-5" aria-hidden />
         </button>
-      </div>
+      </div> */}
     </>
   );
 }
