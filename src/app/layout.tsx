@@ -9,6 +9,7 @@ import { SITE, SITE_URL } from "@/lib/site";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CartDrawer } from "@/components/CartDrawer";
+import { SmoothScroll } from "@/components/SmoothScroll";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={manrope.variable}>
       <body>
+        <SmoothScroll />
         <CartProvider>
           <SiteNav />
           <main>{children}</main>

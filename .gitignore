@@ -1,11 +1,27 @@
 # Dependencies
 node_modules
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # Next.js
 .next/
 out/
 next-env.d.ts
 *.tsbuildinfo
+.swc/
+
+# Production build output
+build/
+dist/
+
+# Tests
+coverage/
+.nyc_output/
 
 # Env files (commit .env.example only)
 .env*
@@ -15,18 +31,36 @@ next-env.d.ts
 .vercel
 .open-next/
 .wrangler/
+.netlify/
 
 # Logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Caches
+.eslintcache
+.cache/
+.turbo/
+.parcel-cache/
 
 # Editor / OS
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
+Desktop.ini
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Local AI tooling settings
+.claude/settings.local.json
+
+# Certificates and keys
+*.pem

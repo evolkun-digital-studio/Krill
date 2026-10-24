@@ -13,7 +13,7 @@ export function PageHeader({ title, text, image, alt }: { title: string; text: s
     );
   }
   return (
-    <section className="px-3 pt-24 md:px-5">
+    <section className="mx-auto max-w-7xl px-5 pt-24 md:px-8">
       <div className="relative overflow-hidden rounded-3xl">
         <Image src={image} alt={alt ?? title} fill preload sizes="100vw" className="ken-burns object-cover" />
         <div className="hero-overlay absolute inset-0" aria-hidden />

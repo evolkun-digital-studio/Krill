@@ -1,6 +1,6 @@
 import heroOrganics from "@/assets/hero-organics.jpg";
 import heroHandicraft from "@/assets/hero-handicraft.jpg";
-import heroDairy from "@/assets/hero-dairy.jpg";
+import heroDairy from "@/assets/fresh-milk.jpg";
 import heroFishery from "@/assets/hero-fishery.jpg";
 import beeFrame from "@/assets/p-bee-frame.jpg";
 import beeExtract from "@/assets/p-bee-extract.jpg";
@@ -44,7 +44,7 @@ export const craftSteps: Step[] = [
 export const craftExtra = wood;
 
 export const dairySteps: Step[] = [
-  { title: "Open pastures", text: "Desi cows graze freely on green village pastures.", image: heroDairy, alt: "Cows grazing in a green village pasture at golden hour" },
+  { title: "Open pastures", text: "Desi cows graze freely on green village pastures.", image: heroDairy, alt: "Fresh milk from village cows" },
   { title: "Clean milking", text: "Milking is done by hand into clean steel buckets.", image: milk, alt: "Farmer hand-milking a cow into a steel bucket" },
   { title: "Fresh milk", text: "Milk is collected in steel cans the same morning.", image: cans, alt: "Fresh milk in steel cans in a village courtyard" },
   { title: "Bilona churning", text: "Curd is churned with a wooden bilona to make butter and ghee.", image: bilona, alt: "Woman churning curd in a clay pot with a wooden bilona" },

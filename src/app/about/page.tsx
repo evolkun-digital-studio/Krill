@@ -41,8 +41,8 @@ export default function About() {
         </Reveal>
       </section>
 
-      <section className="px-3 md:px-5">
-        <div className="relative mx-auto aspect-[4/3] max-w-[96rem] overflow-hidden rounded-3xl md:aspect-[21/9]">
+      <section className="mx-auto max-w-7xl px-5 md:px-8">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl md:aspect-[21/9]">
           <Image src={portrait} alt="Members of a rural community together in their village" fill preload sizes="100vw" className="ken-burns object-cover" />
         </div>
       </section>
@@ -104,8 +104,8 @@ export default function About() {
         </div>
       </section>
 
-      <section className="px-3 py-3 md:px-5 md:py-5">
-        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-honey-night text-on-dark md:grid-cols-2">
+      <section className="mx-auto max-w-7xl px-5 py-3 md:px-8 md:py-5">
+        <div className="grid overflow-hidden rounded-3xl bg-honey-night text-on-dark md:grid-cols-2">
           <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[28rem]">
             <Image src={hands} alt="Hands holding fresh produce from the field" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
           </div>

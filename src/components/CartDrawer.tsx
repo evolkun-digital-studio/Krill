@@ -51,7 +51,7 @@ export function CartDrawer() {
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto px-6 py-4">
+        <div data-lenis-prevent className="flex-1 overflow-y-auto px-6 py-4">
           {items.length === 0 ? (
             <p className="type-body py-10 text-center text-muted-foreground">Your cart is empty.</p>
           ) : (

@@ -51,7 +51,7 @@ function Rail({ heading, intro, steps }: Props) {
               <Image src={s.image} alt={s.alt} fill sizes="340px" className="img-zoom object-cover" />
               <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-overlay/90 via-overlay/25 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6">
-                <h3 className="text-xl font-semibold text-honey leading-tight tracking-tight">{s.title}</h3>
+                <h3 className="text-xl font-semibold text-on-dark leading-tight tracking-tight">{s.title}</h3>
                 <p className="type-body mt-2 text-on-dark/80">{s.text}</p>
               </div>
             </li>
@@ -65,8 +65,8 @@ function Rail({ heading, intro, steps }: Props) {
 /* Cold-press oil: wide cards that pile on top of each other as you scroll, like pressed layers. */
 function Stack({ heading, intro, steps, highlight }: Props) {
   return (
-    <section className="bg-oil-wash px-3 py-20 md:px-5 md:py-28">
-      <div className="mx-auto max-w-7xl">
+    <section className="bg-oil-wash py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Reveal className="mx-auto max-w-3xl px-2 text-center">
           <h2 className="type-display">{heading}</h2>
           <p className="type-body mx-auto mt-6 max-w-xl text-muted-foreground">{intro}</p>
@@ -99,37 +99,37 @@ function Stack({ heading, intro, steps, highlight }: Props) {
 
 /* Made by hand: not a sequence, so a mosaic of different-sized tiles, like pieces on a workbench. */
 const bentoSpans = [
-  "md:col-span-4 md:row-span-2",
-  "md:col-span-2",
-  "md:col-span-2",
-  "md:col-span-6",
+  "md:col-span-6 lg:col-span-5 lg:row-span-2",
+  "md:col-span-3 lg:col-span-4",
+  "md:col-span-3 lg:col-span-3 lg:row-span-2",
+  "md:col-span-6 lg:col-span-4",
 ];
 
 function Bento({ heading, intro, steps }: Props) {
   return (
-    <section className="bg-craft-wash px-3 py-20 md:px-5 md:py-28">
-      <div className="mx-auto max-w-7xl">
-        <Reveal className="max-w-3xl">
+    <section className="bg-craft py-20 text-on-dark md:py-28">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <Reveal className="mx-auto max-w-3xl text-center">
           <h2 className="type-display">{heading}</h2>
-          <p className="type-body mt-6 max-w-xl text-muted-foreground">{intro}</p>
+          <p className="type-body mx-auto mt-6 max-w-xl text-on-dark/70">{intro}</p>
         </Reveal>
-        <ul className="mt-12 grid gap-3 md:mt-16 md:auto-rows-[17rem] md:grid-cols-6 md:gap-4">
+        <ul className="mt-12 grid gap-3 md:mt-16 md:auto-rows-[16rem] md:grid-cols-6 md:gap-4 lg:grid-cols-12">
           {steps.map((s, i) => (
             <li
               key={s.title}
-              className={`group relative min-h-72 overflow-hidden rounded-3xl bg-overlay text-on-dark ${bentoSpans[i] ?? "md:col-span-3"}`}
+              className={`group relative min-h-72 overflow-hidden rounded-[1.75rem] bg-overlay ${bentoSpans[i] ?? "md:col-span-3 lg:col-span-4"}`}
             >
               <Image
                 src={s.image}
                 alt={s.alt}
                 fill
-                sizes={i === 0 ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 50vw, 100vw"}
+                sizes={i === 0 ? "(min-width: 1024px) 42vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"}
                 className="img-zoom object-cover"
               />
               <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-overlay/85 via-overlay/10 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                <h3 className={`font-semibold leading-tight tracking-tight ${i === 0 ? "text-2xl md:text-3xl" : "text-xl md:text-2xl"}`}>{s.title}</h3>
-                <p className="type-body mt-2 max-w-md text-on-dark/85">{s.text}</p>
+              <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                <h3 className="text-xl font-semibold leading-tight tracking-tight md:text-2xl">{s.title}</h3>
+                <p className="mt-1.5 max-w-sm text-sm leading-relaxed text-on-dark/85">{s.text}</p>
               </div>
             </li>
           ))}

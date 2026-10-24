@@ -45,7 +45,7 @@
   --color-honey: var(--honey);
   --color-honey-ink: var(--honey-ink);
   --color-oil-wash: var(--oil-wash);
-  --color-craft-wash: var(--craft-wash);
+  --color-craft: var(--craft);
 }
 
 :root {
@@ -81,7 +81,7 @@
   --honey: oklch(0.82 0.135 82);
   --honey-ink: oklch(0.25 0.05 65);
   --oil-wash: oklch(0.955 0.045 100);
-  --craft-wash: oklch(0.945 0.03 55);
+  --craft: oklch(0.31 0.06 38);
   --product-image: #F3EEE4;
   --product-muted: #5E5A52;
   --shadow-soft: 0 20px 50px -25px color-mix(in oklab, var(--primary) 35%, transparent);
@@ -97,9 +97,6 @@
     border-color: var(--color-border);
     font-style: normal !important;
   }
-  html {
-    scroll-behavior: smooth;
-  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -110,6 +107,12 @@
   }
   em, i { font-style: normal; }
 }
+
+/* Lenis base rules */
+html.lenis, html.lenis body { height: auto; }
+.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent], .lenis [data-lenis-prevent-wheel] { overscroll-behavior: contain; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
 
 /* The only four type styles used on the site */
 @utility type-heading {
@@ -208,7 +211,7 @@
 }
 
 /* Shared catalog layout; names and descriptions reserve identical tracks. */
-.product-container { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: 24px; }
+.product-container { width: 100%; max-width: 80rem; margin-inline: auto; padding-inline: 20px; }
 .product-section { padding-block: 64px; }
 .product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; column-gap: 16px; row-gap: 28px; }
 .product-card { display: flex; flex-direction: column; height: 100%; min-width: 0; }
@@ -222,8 +225,10 @@
 @media (min-width: 768px) {
   .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+@media (min-width: 768px) {
+  .product-container { padding-inline: 32px; }
+}
 @media (min-width: 1024px) {
-  .product-container { padding-inline: 40px; }
   .product-section { padding-block: 96px; }
   .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 24px; row-gap: 40px; }
 }
