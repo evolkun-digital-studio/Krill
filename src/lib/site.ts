@@ -45,6 +45,7 @@ export const heroSlides: HeroSlide[] = [
     cta: "Shop Organics",
     href: "/organics",
     poster: heroOrganics,
+    video: "/videos/organics.mp4",
   },
   {
     key: "handicraft",
@@ -53,6 +54,7 @@ export const heroSlides: HeroSlide[] = [
     cta: "Shop Handicraft",
     href: "/handicraft",
     poster: heroHandicraft,
+    video: "/videos/handicraft.mp4",
   },
   {
     key: "dairy",
@@ -61,6 +63,7 @@ export const heroSlides: HeroSlide[] = [
     cta: "Shop Dairy",
     href: "/dairy",
     poster: heroDairy,
+    video: "/videos/dairy.mp4",
   },
   {
     key: "fishery",

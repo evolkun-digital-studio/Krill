@@ -37,7 +37,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={manrope.variable}>
-      <body>
+      {/* Browser extensions often stamp attributes onto <body> before React hydrates. */}
+      <body suppressHydrationWarning>
         <CartProvider>
           <SiteNav />
           <main>{children}</main>
